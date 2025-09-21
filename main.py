@@ -11,7 +11,7 @@ app = FastAPI(
 )
 
 # Load the pre-trained model
-with open("C:/Users/SirIsaac/OneDrive/Desktop/ml_pipeline/model.pkl", "rb") as model_file:
+with open("model.pkl", "rb") as model_file:
     model = pickle.load(model_file)
 
 # Create a root endpoint (first endpoint) - acts as the home page of the API
@@ -41,4 +41,5 @@ def model_predict(water: WaterPotability):
     if predicted_value[0] == 1:
         return "Water is Consumable"
     else:
+
         return "Water is Not Consumable"
